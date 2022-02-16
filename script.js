@@ -2,11 +2,17 @@ const playerSelection = "Paper";
 const computerSelection = computerPlay();
 
 function computerPlay() {
-  let gameChoice = ["Rock", "Paper", "Scissors"];
-  let randomChoice = gameChoice[Math.floor(Math.random() * gameChoice.length)];
-  // console.log(randomChoice);
-  return randomChoice;
+  let computerChoice = Math.floor(Math.random() * 3) + 1;
+  if (computerChoice === 1) {
+    return "Rock";
+  } else if (computerChoice === 2) {
+    return "Paper";
+  } else {
+    return "Scissors";
+  }
 }
+
+console.log(computerPlay());
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
@@ -30,4 +36,3 @@ function game() {
   }
 }
 
-game();
