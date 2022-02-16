@@ -1,4 +1,4 @@
-const playerSelection = "Rock";
+const playerSelection = "Paper";
 const computerSelection = computerPlay();
 
 function computerPlay() {
@@ -10,24 +10,24 @@ function computerPlay() {
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
-    console.log("Draw");
+    return "Draw";
   } else if (playerSelection === "Rock" && computerSelection === "Scissors") {
-    console.log(
-      `You Win! You had ${playerSelection} and the computer had ${computerSelection}`
-    );
+    return `You Win! You had ${playerSelection} and the Computer had ${computerSelection}`;
   } else if (playerSelection === "Paper" && computerSelection == "Rock") {
-    console.log(
-      `You Win! You had ${playerSelection} and the computer had ${computerSelection}`
-    );
+    return `You Win! You had ${playerSelection} and the Computer had ${computerSelection}`;
   } else if (playerSelection === "Scissors" && computerSelection === "Paper") {
-    console.log(
-      `You Win! You had ${playerSelection} and the computer had ${computerSelection}`
-    );
+    return `You Win! You had ${playerSelection} and the Computer had ${computerSelection}`;
   } else {
-    console.log(
-      `You Lose, You had ${playerSelection} and the computer had ${computerSelection}`
-    );
+    return `You Lose, You had ${playerSelection} and the Computer had ${computerSelection}`;
   }
 }
 
-playRound(playerSelection, computerSelection);
+function game() {
+  for (let i = 0; i < 5; i++) {
+    const playerSelection = "Paper";
+    const computerSelection = computerPlay();
+    console.log(playRound(playerSelection, computerSelection));
+  }
+}
+
+game();
