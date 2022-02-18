@@ -1,5 +1,6 @@
-const playerSelection = "Paper";
-const computerSelection = computerPlay();
+const playerSelection = prompt(
+  "Rock, Paper or Scissors? (An incorrect selection or typo will result in a loss)"
+);
 
 function computerPlay() {
   let computerChoice = Math.floor(Math.random() * 3) + 1;
@@ -11,8 +12,6 @@ function computerPlay() {
     return "Scissors";
   }
 }
-
-console.log(computerPlay());
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
@@ -30,9 +29,9 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
   for (let i = 0; i < 5; i++) {
-    const playerSelection = "Paper";
     const computerSelection = computerPlay();
     console.log(playRound(playerSelection, computerSelection));
   }
 }
 
+game();
