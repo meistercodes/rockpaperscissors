@@ -22,7 +22,7 @@ function playRound(playerChoice, computerChoice) {
   } else if (playerChoice === "Scissors" && computerChoice === "Paper") {
     console.log("You Win!");
   } else {
-    console.log("You Lose!");
+    console.log("The Computer Wins!");
   }
 }
 
