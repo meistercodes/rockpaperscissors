@@ -14,16 +14,24 @@ function computerPlay() {
 
 function playRound(playerChoice, computerChoice) {
   if (playerChoice === "Rock" && computerChoice === "Rock") {
-    console.log("Draw");
+    return "Draw";
   } else if (playerChoice === "Rock" && computerChoice === "Scissors") {
-    console.log("You Win!");
+    return "You Win!";
   } else if (playerChoice === "Paper" && computerChoice === "Rock") {
-    console.log("You Win!");
+    return "You Win!";
   } else if (playerChoice === "Scissors" && computerChoice === "Paper") {
-    console.log("You Win!");
+    return "You Win!";
   } else {
-    console.log("The Computer Wins!");
+    return "The Computer Wins!";
   }
 }
 
-playRound(playerChoice, computerChoice);
+function game() {
+  for (let i = 0; i < 5; i++) {
+    let computerChoice = computerPlay();
+    console.log(playRound(playerChoice, computerChoice));
+  }
+}
+
+game();
+
