@@ -40,11 +40,11 @@ function playRound(playerChoice, computerChoice) {
 
 function roundExit(playerScore, computerScore) {
   if (playerScore === computerScore) {
-    return "The Round was a Tie!";
+    return `The Round Was A Tie. There Were ${drawScore} Draw(s)`;
   } else if (playerScore > computerScore) {
-    return `Congratulations! You have won the round, your score was ${playerScore} and the computer score was ${computerScore}`;
+    return `Congratulations! You have won the round, your score was ${playerScore} and the computer score was ${computerScore}. There were ${drawScore} Draw(s)`;
   } else {
-    return `Sorry, you have lost the round, your score was ${playerScore} and the computer score was ${computerScore}`;
+    return `Sorry, you have lost the round, your score was ${playerScore} and the computer score was ${computerScore}. There was ${drawScore} Draw(s)`;
   }
 }
 
