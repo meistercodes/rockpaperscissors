@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Hubballi&display=swap');
+
+* {
+  font-family: 'Hubballi', cursive;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(97, 97, 97);
+}
+
+h1 {
+  color: rgb(131, 255, 131);
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 2px;
+  margin-right: 3px;
+  background-color: rgb(58, 58, 82);
+  color: aqua;
+}
+
+.maincontain {
+  width: 560px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+.gameresult {
+  margin-top: 20px;
+  font-size: 1.4rem;
+}
+
+.scorecontain {
+  font-size: 1.4rem;
+  margin-top: 15px;
+}
+
+.playerscorecontain {
+  margin-bottom: 10px;
+}
+
+.computerscorecontain {
+  margin-bottom: 10px;
+}

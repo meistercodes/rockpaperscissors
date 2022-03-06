@@ -2,10 +2,55 @@ let playerScore = 0;
 let computerScore = 0;
 let drawScore = 0;
 
-function playerPlay() {
-  let playerChoice = prompt("Rock, Paper, or Scissors?");
-  return playerChoice;
-}
+const rockBtn = document.querySelector('.rockbtn')
+const paperBtn = document.querySelector('.paperbtn')
+const scissorsBtn = document.querySelector('.scissorsbtn')
+const playResult = document.querySelector('.gameresult')
+const playerScoreDis = document.querySelector('.playerscorecontain')
+const computerScoreDis = document.querySelector('.computerscorecontain')
+const drawScoreDis = document.querySelector('.drawscorecontain')
+const resetBtn = document.querySelector('.gamereset')
+
+resetBtn.addEventListener('click', () => {
+  rockBtn.disabled = false
+  paperBtn.disabled = false
+  scissorsBtn.disabled = false
+  playResult.innerHTML = ''
+  playerScoreDis.innerHTML = 'Player Score: 0'
+  computerScoreDis.innerHTML = 'Computer Score: 0'
+  drawScoreDis.innerHTML = 'Draw Score: 0'
+  playerScore = 0
+  computerScore = 0
+  drawScore = 0
+});
+
+rockBtn.addEventListener('click', gameExecute)
+paperBtn.addEventListener('click', gameExecute)
+scissorsBtn.addEventListener('click', gameExecute)
+
+function gameExecute() {
+  playResult.innerHTML = playRound('Paper', computerPlay())
+  playerScoreDis.innerHTML = `Player Score: ${playerScore}`
+  computerScoreDis.innerHTML = `Computer Score: ${computerScore}`
+  drawScoreDis.innerHTML = `Draw Score: ${drawScore}`
+  if (playerScore === 5) {
+    rockBtn.disabled = true
+    paperBtn.disabled = true
+    scissorsBtn.disabled = true
+    playResult.innerHTML = 'You Have Won The Game!'
+    playerScore = 0
+    computerScore = 0
+    drawScore = 0
+  } else if (computerScore === 5) {
+    rockBtn.disabled = true
+    paperBtn.disabled = true
+    scissorsBtn.disabled = true
+    playResult.innerHTML = 'The Computer Has Won The Game!'
+    playerScore = 0
+    computerScore = 0
+    drawScore = 0
+}}
+
 
 // Function that generates a random computer selection
 function computerPlay() {
@@ -37,24 +82,3 @@ function playRound(playerChoice, computerChoice) {
     return `You Lose! You had ${playerChoice} and the Computer had ${computerChoice}`;
   }
 }
-
-function roundExit(playerScore, computerScore) {
-  if (playerScore === computerScore) {
-    return `The Round Was A Tie. There Were ${drawScore} Draw(s)`;
-  } else if (playerScore > computerScore) {
-    return `Congratulations! You have won the round, your score was ${playerScore} and the computer score was ${computerScore}. There were ${drawScore} Draw(s)`;
-  } else {
-    return `Sorry, you have lost the round, your score was ${playerScore} and the computer score was ${computerScore}. There was ${drawScore} Draw(s)`;
-  }
-}
-
-function game() {
-  for (let i = 0; i < 5; i++) {
-    let computerChoice = computerPlay();
-    let playerChoice = playerPlay();
-    console.log(playRound(playerChoice, computerChoice));
-  }
-}
-
-game();
-console.log(roundExit(playerScore, computerScore));
