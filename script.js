@@ -24,12 +24,22 @@ resetBtn.addEventListener('click', () => {
   drawScore = 0
 });
 
-rockBtn.addEventListener('click', gameExecute)
-paperBtn.addEventListener('click', gameExecute)
-scissorsBtn.addEventListener('click', gameExecute)
+rockBtn.addEventListener('click', () => {
+  playResult.innerHTML = playRound('Rock', computerPlay())
+  gameExecute()
+})
+
+paperBtn.addEventListener('click', () => {
+  playResult.innerHTML = playRound('Paper', computerPlay())
+  gameExecute()
+})
+
+scissorsBtn.addEventListener('click', () => {
+  playResult.innerHTML = playRound('Scissors', computerPlay())
+  gameExecute()
+})
 
 function gameExecute() {
-  playResult.innerHTML = playRound('Paper', computerPlay())
   playerScoreDis.innerHTML = `Player Score: ${playerScore}`
   computerScoreDis.innerHTML = `Computer Score: ${computerScore}`
   drawScoreDis.innerHTML = `Draw Score: ${drawScore}`

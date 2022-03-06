@@ -8,7 +8,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: rgb(97, 97, 97);
+  background-color: rgb(25, 0, 125);
 }
 
 h1 {
@@ -18,11 +18,11 @@ h1 {
 button {
   padding: 10px 20px;
   font-size: 1.5rem;
-  border: none;
-  border-radius: 2px;
+  border: 2px solid rgb(131, 255, 131);
+  border-radius: 4px;
   margin-right: 3px;
-  background-color: rgb(58, 58, 82);
-  color: aqua;
+  background-color: rgb(25, 0, 125);
+  color: rgb(131, 255, 131);
 }
 
 .maincontain {
@@ -35,17 +35,21 @@ button {
 .gameresult {
   margin-top: 20px;
   font-size: 1.4rem;
+  color: rgb(131, 255, 131);
 }
 
 .scorecontain {
   font-size: 1.4rem;
   margin-top: 15px;
+  color: rgb(131, 255, 131);
 }
 
 .playerscorecontain {
   margin-bottom: 10px;
+  color: rgb(131, 255, 131);
 }
 
 .computerscorecontain {
   margin-bottom: 10px;
+  color: rgb(131, 255, 131);
 }
